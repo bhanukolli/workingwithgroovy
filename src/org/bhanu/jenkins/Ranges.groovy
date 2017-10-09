@@ -25,3 +25,9 @@ def  weekdays = DAYS.MON..DAYS.FRI
 for (var2 in weekdays){
     println(var2)
 }
+
+println "Extents: "
+
+println weekdays.from
+println weekdays.to
+
