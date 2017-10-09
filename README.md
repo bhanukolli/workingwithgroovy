@@ -1,3 +1,3 @@
 # workingwithgroovy
 
-### Basic syntax 
+### Basic syntax - Collections
