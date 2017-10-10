@@ -7,7 +7,9 @@ package org.bhanu.jenkins
 def numbers = 0..9
 
 for (num in numbers){
-    println num
+    if (isEven(num)) {
+        println num
+    }
 }
 
 def  isEven(def num){
