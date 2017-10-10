@@ -6,23 +6,27 @@ package org.bhanu.xml
 
 def file = new File('file.gpx')
 
+println file.exists()
+
+
 def slurper = new XmlSlurper()
 def gpx = slurper.parse(file)
 
-def markupBuilder = new groovy.xml.StreamingMarkupBuilder()
-def xml = markupBuilder.bind{
-    route{
-        gpx.wpt.each { point ->
-            routepoint(name: point.name.toString()){
-                latitude(point.@lat)
-                longitude(point.@lot)
-            }
+// println gpx
 
-        }
-    }
+println gpx.metadata.name
+println 'bhanu'
+println gpx.metadata.desc
 
+println gpx.@version
+println gpx.@creator
+
+for (point in gpx.wpt ){
+    println point.@lat
+    println point.@lon
 }
 
-
-def outFile = new File('bhanu.xml')
-outFile.write(xml.toString())
+gpx.wpt.each {
+    println it.@lat
+    println it.@lon
+}
