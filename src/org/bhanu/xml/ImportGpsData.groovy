@@ -12,4 +12,8 @@ println file.exists()
 def slurper = new XmlSlurper()
 def gpx = slurper.parse(file)
 
-println gpx
+// println gpx
+
+println gpx.metadata.name
+println 'bhanu'
+println gpx.metadata.desc
