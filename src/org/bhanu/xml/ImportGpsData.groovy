@@ -17,3 +17,11 @@ def gpx = slurper.parse(file)
 println gpx.metadata.name
 println 'bhanu'
 println gpx.metadata.desc
+
+println gpx.@version
+println gpx.@creator
+
+for (point in gpx.wpt ){
+    println point.@lat
+    println point.@lon
+}
