@@ -26,3 +26,8 @@ for (i in 1..3) {
 (1..3).each { i ->
     println "In Closure : $i"
 }
+
+
+(1..10).findAll({ return it%2 == 0 }).each {
+    println "In Closure : $it"
+}
