@@ -25,3 +25,8 @@ for (point in gpx.wpt ){
     println point.@lat
     println point.@lon
 }
+
+gpx.wpt.each {
+    println it.@lat
+    println it.@lon
+}
