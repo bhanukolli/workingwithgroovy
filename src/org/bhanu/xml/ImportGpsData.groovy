@@ -11,10 +11,15 @@ def gpx = slurper.parse(file)
 
 def markupBuilder = new groovy.xml.StreamingMarkupBuilder()
 def xml = markupBuilder.bind{
-    gpx.wpt.each {
-        latitude(it.@lat)
-        longitude(it.@lot)
-     }
+    route{
+        gpx.wpt.each { point ->
+            routepoint(name: point.name.toString()){
+                latitude(point.@lat)
+                longitude(point.@lot)
+            }
+
+        }
+    }
 
 }
 
